@@ -18,8 +18,8 @@ def jacobian(q):
 
 # ---------- fixed values ----------
 q1 = np.deg2rad(145)
-q2 = np.deg2rad(30)
-sigma_q = 0.1  # joint angle uncertainty [rad]
+q2 = np.deg2rad(60)
+sigma_q = 0.05  # joint angle uncertainty [rad]
 
 # ---------- computation ----------
 q = np.array([q1, q2])
