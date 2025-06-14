@@ -5,6 +5,18 @@
 - **Differential Kinematics** - Deriving the Jacobian matirix, interpreting its geometric meaning, plotting the manipulability ellipse, and detecting singularities via rank/condition tests.
 - **Inverse Kinematics (IK)** - Solving the pose-to-joint problem through both analytic and numerical techniques.
 
+## Position of a Rigid Body
+
+## Orientation of a Rigid Body
+
+## Rotation Matrix
+
+## Workspace visualisation (planar 2‑R)
+
+## Single‑Pass FK Algorithm implementation
+
+## Jacobian properties: rank, manipulability, ellipse
+
 ## Error Propagation Ellipse  
 Measurements or commands in joint space are never perfect. If the joint vector q carries uncertainty, that error propagates through the robot's kinematics and affects the position of the end effector in task space.  
 
