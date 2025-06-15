@@ -15,18 +15,7 @@ Suppose there is a fixed point O' on the rigid body. Its position with respect t
 
 - **Representation of the Position Vector**  
 The vector o' can be expressed as  
-$$
-\mathbf{o}' = o_x' \mathbf{x} + o_y' \mathbf{y} + o_z' \mathbf{z}
-$$  
-  
-$$
-\mathbf{o}' =
-\begin{bmatrix}
-o_x' \\
-o_y' \\
-o_z'
-\end{bmatrix}
-$$
+![alt text](image.png)
 
 - **What is a Bound Vector ?**  
 A bound vector is a vector that not only has magnitude and direction, but also a fixed point of application and acts a specific line in space.
