@@ -21,6 +21,10 @@ The vector o' can be expressed as
 A bound vector is a vector that not only has magnitude and direction, but also a fixed point of application and acts a specific line in space.
 
 ## Orientation of a Rigid Body
+The orientation of a rigid body is described by attaching a new orthonormal frame  O′-x′y′z′  to the body and expressing its axes with respect to the reference frame  O-xyz .
+
+Each unit vector  x′,y′,z′  of the body frame is expressed in terms of the reference frame as:  
+![alt text](image-1.png)
 
 ## Rotation Matrix
 
