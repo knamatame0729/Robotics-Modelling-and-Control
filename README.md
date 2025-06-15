@@ -6,6 +6,30 @@
 - **Inverse Kinematics (IK)** - Solving the pose-to-joint problem through both analytic and numerical techniques.
 
 ## Position of a Rigid Body
+A rigid body is completely described in space by its position and orientation with respect to a reference frame.  
+
+- **Reference Frame: F = O-xyz**  
+Origin: O
+Unit vectors: x, y, z(along each coordinate axis)  
+Suppose there is a fixed point O' on the rigid body. Its position with respect to the frame F is given by a position vector $\mathbf{o}' \in \mathbb{R}^3$.  
+
+- **Representation of the Position Vector**  
+The vector o' can be expressed as
+$$
+\mathbf{o}' = o_x' \mathbf{x} + o_y' \mathbf{y} + o_z' \mathbf{z}
+$$
+ 
+$$
+\mathbf{o}' =
+\begin{bmatrix}
+o_x' \\
+o_y' \\
+o_z'
+\end{bmatrix}
+$$
+
+- **What is a Bound Vector ?**  
+A bound vector is a vector that not only has magnitude and direction, but also a fixed point of application and acts a specific line in space.
 
 ## Orientation of a Rigid Body
 
@@ -22,5 +46,5 @@ Measurements or commands in joint space are never perfect. If the joint vector q
 
 [error_propagation_ellipse.py](https://github.com/knamatame0729/Robotics-Modelling-and-Control/blob/main/error_propagation_ellipse.py)  
 
-- Result  
+- Result  (Joint angle uncertainty 0.05 [rad])  
 ![Image](https://github.com/user-attachments/assets/3c981419-f66c-48eb-8a93-6f5ed2b2e6de)
