@@ -14,11 +14,11 @@ Unit vectors: x, y, z(along each coordinate axis)
 Suppose there is a fixed point O' on the rigid body. Its position with respect to the frame F is given by a position vector $\mathbf{o}' \in \mathbb{R}^3$.  
 
 - **Representation of the Position Vector**  
-The vector o' can be expressed as
+The vector o' can be expressed as  
 $$
 \mathbf{o}' = o_x' \mathbf{x} + o_y' \mathbf{y} + o_z' \mathbf{z}
-$$
- 
+$$  
+  
 $$
 \mathbf{o}' =
 \begin{bmatrix}
