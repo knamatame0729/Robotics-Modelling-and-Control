@@ -37,26 +37,51 @@ Rotations in 3D space can be described using elementary rotation matrices, each 
 ### Representation of a Vector
 Let **p** be a vector expressed in the reference frame. When we apply a rotation matrix R** to **p**, the result is a new vector *R***p**, which is the rotated version of **p**:  
 
-**p'** = *R***p**  
+<div align="center">
+
+**p'** = *R***p**
+  
+</div>
+
 
 ### Composition of Rotation Matrices
 Let O-x₀y₀z₀, O-x₁y₁z₁, O-x₂y₂z₂ be three frames with common origin O.  
 
 Let **p₂** be the coordinates of a vector **p** in Frame 2. Then, the transformations between frames are given by:
 
+<div align="center">
+
 **p₁** = R12 **p₂**  
 **p₀** = R01 **p₁**  
 
+</div>
+
 By substituting,
 
+<div align="center">
+
 **p₀** = R01 R12 **p₂**  
-**p₀** = R02 **p₂** 
+**p₀** = R02 **p₂**
+
+</div>
+
+ 
 
 - If each rotation is defined with respect to the current(rotating) frame, apply them using post-multiplication in the other they occur:  
+<div align="center">
+
 *R(final)* = *R₁R₂R₃ ...*
 
-- If each rotation is defined with respect to a fixed(initial) frame, apply them using pre-multiplication in reverse order:  
+</div>
+
+
+
+- If each rotation is defined with respect to a fixed(initial) frame, apply them using pre-multiplication in reverse order: 
+<div align="center">
+
 *R(final)* = *Rₙ ... R₂R₁*
+
+</div> 
 
 ## Kinematics
 - **Forward Kinematics (FK)** - Computing an end-effector pose from joint angles, visualising reachable workspace, and implementing an efficient single-pass FK algorithm for arbitrary chains.
@@ -82,6 +107,25 @@ The sigle-pass FK algorithm computes every link's world tranform in one linear s
 - Efficiency - Linear time, cache-friendly loop.
 - Generality - Handles chains, trees, even floating bases (set parent = -1 and provide its pose).
 - Simplicity - Mirrors physical assembly: base → tip.
+
+## Differential Kinematics
+The forward kinematics map  
+
+<div align="center">
+
+*f* : *Q* → *SE(3)*, *x = f(q)*
+
+</div>
+
+is defferntiable almost everywhere. Linearizing it around a configuration **q** yields the core relation:  
+
+<div align="center">
+
+*x˙=J(q)q˙*
+
+</div>
+
+where *J(q) is the Jacobian matrix.
 
 ## Jacobian properties: rank, manipulability, ellipse
 
