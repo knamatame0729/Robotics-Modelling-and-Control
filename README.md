@@ -1,12 +1,4 @@
-# Robotics-Modelling-and-Control
-
-## Kinematics
-- **Forward Kinematics (FK)** - Computing an end-effector pose from joint angles, visualising reachable workspace, and implementing an efficient single-pass FK algorithm for arbitrary chains.
-- **Differential Kinematics** - Deriving the Jacobian matirix, interpreting its geometric meaning, plotting the manipulability ellipse, and detecting singularities via rank/condition tests.
-- **Inverse Kinematics (IK)** - Solving the pose-to-joint problem through both analytic and numerical techniques.
-
-## Position of a Rigid Body
-A rigid body is completely described in space by its position and orientation with respect to a reference frame.  
+# Robotics-Modelling-and-Control 
 
 - **Reference Frame: F = O-xyz**  
 Origin: O
@@ -66,6 +58,14 @@ By substituting,
 - If each rotation is defined with respect to a fixed(initial) frame, apply them using pre-multiplication in reverse order:  
 *R(final)* = *Rₙ ... R₂R₁*
 
+## Kinematics
+- **Forward Kinematics (FK)** - Computing an end-effector pose from joint angles, visualising reachable workspace, and implementing an efficient single-pass FK algorithm for arbitrary chains.
+- **Differential Kinematics** - Deriving the Jacobian matirix, interpreting its geometric meaning, plotting the manipulability ellipse, and detecting singularities via rank/condition tests.
+- **Inverse Kinematics (IK)** - Solving the pose-to-joint problem through both analytic and numerical techniques.
+
+## Position of a Rigid Body
+A rigid body is completely described in space by its position and orientation with respect to a reference frame. 
+
 ## Workspace visualisation (planar 2‑R)
 
 [workspace_visualize.py](https://github.com/knamatame0729/Robotics-Modelling-and-Control/blob/main/workspace_visualize.py)
@@ -77,6 +77,11 @@ By substituting,
 ![alt text](media/rechable_ws_orientation.png)  
 
 ## Single‑Pass FK Algorithm implementation
+The sigle-pass FK algorithm computes every link's world tranform in one linear sweep - no recursion, no call-stack growth.  
+
+- Efficiency - Linear time, cache-friendly loop.
+- Generality - Handles chains, trees, even floating bases (set parent = -1 and provide its pose).
+- Simplicity - Mirrors physical assembly: base → tip.
 
 ## Jacobian properties: rank, manipulability, ellipse
 
