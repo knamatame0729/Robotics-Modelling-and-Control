@@ -15,7 +15,7 @@ Suppose there is a fixed point O' on the rigid body. Its position with respect t
 
 - **Representation of the Position Vector**  
 The vector o' can be expressed as  
-![alt text](image.png)
+![Image](https://github.com/user-attachments/assets/62a9752a-06a4-43f2-935d-b0b7d47412cb)  
 
 - **What is a Bound Vector ?**  
 A bound vector is a vector that not only has magnitude and direction, but also a fixed point of application and acts a specific line in space.
@@ -24,7 +24,7 @@ A bound vector is a vector that not only has magnitude and direction, but also a
 The orientation of a rigid body is described by attaching a new orthonormal frame  O′-x′y′z′  to the body and expressing its axes with respect to the reference frame  O-xyz .
 
 Each unit vector  x′,y′,z′  of the body frame is expressed in terms of the reference frame as:  
-![alt text](image-1.png)
+![Image](https://github.com/user-attachments/assets/1775ed01-1b9a-4392-8ef1-99a7d244037
 
 ## Rotation Matrix
 
