@@ -42,6 +42,30 @@ Rotations in 3D space can be described using elementary rotation matrices, each 
 - A rotation about the z-axis by angle α fixes the z-axis, rotating the x- and y-axis in the xy-plane.  
 ![alt text](media/z_axis.png) 
 
+### Representation of a Vector
+Let **p** be a vector expressed in the reference frame. When we apply a rotation matrix R** to **p**, the result is a new vector *R***p**, which is the rotated version of **p**:  
+
+**p'** = *R***p**  
+
+### Composition of Rotation Matrices
+Let O-x₀y₀z₀, O-x₁y₁z₁, O-x₂y₂z₂ be three frames with common origin O.  
+
+Let **p₂** be the coordinates of a vector **p** in Frame 2. Then, the transformations between frames are given by:
+
+**p₁** = R12 **p₂**  
+**p₀** = R01 **p₁**  
+
+By substituting,
+
+**p₀** = R01 R12 **p₂**  
+**p₀** = R02 **p₂** 
+
+- If each rotation is defined with respect to the current(rotating) frame, apply them using post-multiplication in the other they occur:  
+*R(final)* = *R₁R₂R₃ ...*
+
+- If each rotation is defined with respect to a fixed(initial) frame, apply them using pre-multiplication in reverse order:  
+*R(final)* = *Rₙ ... R₂R₁*
+
 ## Workspace visualisation (planar 2‑R)
 
 ## Single‑Pass FK Algorithm implementation
