@@ -68,6 +68,14 @@ By substituting,
 
 ## Workspace visualisation (planar 2‑R)
 
+[workspace_visualize.py](https://github.com/knamatame0729/Robotics-Modelling-and-Control/blob/main/workspace_visualize.py)
+
+![alt text](media/reachable_ws.png)  
+
+![alt text](media/pose.png)  
+
+![alt text](media/rechable_ws_orientation.png)  
+
 ## Single‑Pass FK Algorithm implementation
 
 ## Jacobian properties: rank, manipulability, ellipse
