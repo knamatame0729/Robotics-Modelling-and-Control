@@ -27,6 +27,20 @@ Each unit vector  x′,y′,z′  of the body frame is expressed in terms of the
 ![alt text](media/image-1.png)
 
 ## Rotation Matrix
+A rotation matrix provides a way to describe the orientation of a rigid body in three-dimensional space.
+It is formed by arranging the unit vectors of the rotated coordinate frame into a 3×3 matrix R  
+![alt text](media/rotation_matrix.png)
+
+Rotations in 3D space can be described using elementary rotation matrices, each representing a rotation about one of the main coordinate axes of a fixed reference fram O-xyz. A rotation is considered positive if it is counter-clockwise when viewed along the direction of the axis.  
+
+- A rotation about teh x-axis by angle γ keeps the x-axis fixed and rotates the y- and z-aixs.  
+![alt text](media/x_axis.png)
+
+- A rotation about the y-axis by angle β fixes the y-axis, rotating teh x- and z-axis.  
+![alt text](media/y_axis.png)
+
+- A rotation about the z-axis by angle α fixes the z-axis, rotating the x- and y-axis in the xy-plane.  
+![alt text](media/z_axis.png) 
 
 ## Workspace visualisation (planar 2‑R)
 
