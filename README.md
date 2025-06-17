@@ -121,13 +121,40 @@ is defferntiable almost everywhere. Linearizing it around a configuration **q** 
 
 <div align="center">
 
-*x˙=J(q)q˙*
+*ẋ = J(q)q̇*
 
 </div>
 
-where *J(q) is the Jacobian matrix.
+where *J(q)* is the Jacobian matrix.
 
 ## Jacobian properties: rank, manipulability, ellipse
+
+### Rank & Singularity
+- **Full rank** (rank *J = m*) → mapping is locally bijective, every small task-space motion has a joint-space pre-image.
+- **Rank-deficient** → **singularity**: at least one task direction is lost, requiring infinite joint rates or forces.
+
+### Manipulability & Condition Number
+- Yoshikawa manipulability
+<div align="center">
+
+*w(q)* = $\sqrt{\det(J J^\top)}$ = $σ_1$ $σ_2$ ... $σ_m$
+
+
+</div>
+
+measures volume of achievable velocity vectors for unit joint rates. (How freely a robot's end-effector can move at a given configuration)
+
+### Isotropy / conditioning
+
+<div align="center">
+
+$$
+      \kappa(J)=\frac{\sigma_{\max}}{\sigma_{\min}},\quad 1\le\kappa<\infty.
+$$
+
+</div>
+
+Lower $\kappa$ implies more isotoropic response (uniform dexterity); $\kappa \to \infty$ at singularities.
 
 ## Error Propagation Ellipse  
 Measurements or commands in joint space are never perfect. If the joint vector q carries uncertainty, that error propagates through the robot's kinematics and affects the position of the end effector in task space.  
