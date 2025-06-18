@@ -215,7 +215,7 @@ $J^{\top}$ C J $\Delta\mathbf{q}$ = $J^{\top}$ C $\mathbf{r}$,
 whose least-squares solution is:
 
 $$
-\Delta\mathbf{q} = J^{\text{\#}}\,\mathbf{r},\quad J^{\text{\#}} = (J^{\top} C J + W)^{-1} J^{\top} C.
+\Delta\mathbf{q} = J^{\sharp}\,\mathbf{r},\quad J^{\sharp} = (J^{\top} C J + W)^{-1} J^{\top} C.
 $$
 
 Iterate until convergence:
