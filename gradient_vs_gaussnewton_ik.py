@@ -41,8 +41,8 @@ def ik_opt(target, q_init, method='gd', alpha=0.4, max_iter=300):
 # targets and initial guesses
 target = np.array([0.55, 0.25])
 
-q_init_close = np.deg2rad([10, -60, 5])   # Close initial guess
-q_init_far = np.deg2rad([-170, 70, 135])  # Far initial guess
+q_init_close = np.deg2rad([20, -10, 5])   # Close initial guess
+q_init_far = np.deg2rad([-170, 20, 135])  # Far initial guess
 
 # Run experiments
 results = {}

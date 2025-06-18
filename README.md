@@ -95,11 +95,15 @@ A rigid body is completely described in space by its position and orientation wi
 
 [workspace_visualize.py](https://github.com/knamatame0729/Robotics-Modelling-and-Control/blob/main/workspace_visualize.py)
 
+<div align="center">
+
 ![alt text](media/reachable_ws.png)  
 
 ![alt text](media/pose.png)  
 
 ![alt text](media/rechable_ws_orientation.png)  
+
+</div>
 
 ## Single‑Pass FK Algorithm implementation
 The sigle-pass FK algorithm computes every link's world tranform in one linear sweep - no recursion, no call-stack growth.  
@@ -163,3 +167,63 @@ Measurements or commands in joint space are never perfect. If the joint vector q
 
 - Result  (Joint angle uncertainty 0.05 [rad])  
 ![Image](https://github.com/user-attachments/assets/3c981419-f66c-48eb-8a93-6f5ed2b2e6de)
+
+## Inverse Kinematics
+
+## Optimisation-Based IK - Gradient Descent & Gauss-Newton
+
+[gradient_vs_gaussnewton_ik.py](https://github.com/knamatame0729/Robotics-Modelling-and-Control/blob/main/gradient_vs_gaussnewton_ik.py)
+
+<div align="center">
+
+$$
+\min_{\mathbf{q}} \; g(\mathbf{q}) = \|\mathbf{x}^{\star} - f(\mathbf{q})\|_{C}^{2} + \|\mathbf{q} - \mathbf{q}_{0}\|_{W}^{2},
+$$
+
+</div>
+
+### **Gradient Descent**  
+
+**Props**: Trival to implement, only requires the gradient (or Jacobian).  
+**Cons**: Slow convergence, sensitive to step size, stalls near singularities.  
+
+1. Initialise $\mathbf{q} = \mathbf{q}^{(0)}$
+2. Iterate until convergence: 
+$
+\mathbf{q} \leftarrow \mathbf{q} - \alpha\,\nabla g(\mathbf{q}),
+$  
+with step size $\alpha$ > 0
+3. Stop when $\|\mathbf{x}^{\star}-f(\mathbf{q})\|$ falls below a tolerance.  
+
+### **Gauss-Newton (Jacobian Pseudo-Inverse)**  
+
+**Pros** : Quadratic-like convergence near a solution; steps computed via Jacobian pseudo-inverse.  
+**Cons** : May diverge if the initial guess is poor; requires Jacobian; ill-conditioned at singularities;  
+Linearise the residual  $\mathbf{r}(\mathbf{q}) = \mathbf{x}^{\star} - f(\mathbf[q])$:  
+$$
+\mathbf{r}(\mathbf{q}+\Delta\mathbf{q}) \approx \mathbf{r}(\mathbf{q}) - J(\mathbf{q})\,\Delta\mathbf{q}.
+$$
+
+Minimising the linearised cost leads to the normal equation:  
+
+$$
+J^{\top} C J\,\Delta\mathbf{q} = J^{\top} C\,\mathbf{r},
+$$
+
+whose least-squares solution is:
+
+$$
+\Delta\mathbf{q} = J^{\#}\,\mathbf{r},\quad J^{\#} = (J^{\top} C J + W)^{-1} J^{\top} C.
+$$
+
+Iterate until convergence:
+
+$$
+{\mathbf{q} \leftarrow \mathbf{q} + \Delta\mathbf{q}}
+$$
+
+<div align="center">
+
+![alt text](media/gn_vs_gd.png)
+
+</div>
