@@ -172,14 +172,14 @@ Measurements or commands in joint space are never perfect. If the joint vector q
 
 ## Optimisation-Based IK - Gradient Descent & Gauss-Newton
 
-[gradient_vs_gaussnewton_ik.py](https://github.com/knamatame0729/Robotics-Modelling-and-Control/blob/main/gradient_vs_gaussnewton_ik.py)
+[gradient_vs_gaussnewton_ik.py](https://github.com/knamatame0729/Robotics-Modelling-and-Control/blob/main/gradient_vs_gaussnewton_ik.py)  
 
 $$
 \min_{\mathbf{q}} \; g(\mathbf{q}) = \|\mathbf{x}^{\star} - f(\mathbf{q})\|_{C}^{2} + \|\mathbf{q} - \mathbf{q}_{0}\|_{W}^{2},
 $$
 
 
-### **Gradient Descent**  
+- ### **Gradient Descent**  
 
 **Props**: Trival to implement, only requires the gradient (or Jacobian).  
 **Cons**: Slow convergence, sensitive to step size, stalls near singularities.  
@@ -188,20 +188,20 @@ $$
 2. Iterate until convergence: 
 
 $$
-\mathbf{q} \leftarrow \mathbf{q} - \alpha\,\nabla g(\mathbf{q}),
+\mathbf{q} \leftarrow \mathbf{q} - \alpha\nabla g(\mathbf{q}),
 $$
 
 with step size $\alpha$ > 0
 3. Stop when $\|\mathbf{x}^{\star}-f(\mathbf{q})\|$ falls below a tolerance.  
 
-### **Gauss-Newton (Jacobian Pseudo-Inverse)**  
+- ### **Gauss-Newton (Jacobian Pseudo-Inverse)**  
 
 **Pros** : Quadratic-like convergence near a solution; steps computed via Jacobian pseudo-inverse.  
 **Cons** : May diverge if the initial guess is poor; requires Jacobian; ill-conditioned at singularities;  
 Linearise the residual  $\mathbf{r}(\mathbf{q}) = \mathbf{x}^{\star} - f(\mathbf[q])$:  
 
 $$
-\mathbf{r}(\mathbf{q}+\Delta\mathbf{q}) \approx \mathbf{r}(\mathbf{q}) - J(\mathbf{q})\,\Delta\mathbf{q}.
+\mathbf{r}(\mathbf{q}+\Delta\mathbf{q}) \approx \mathbf{r}(\mathbf{q}) - J(\mathbf{q})\Delta\mathbf{q}.
 $$
 
 Minimising the linearised cost leads to the normal equation:  
@@ -215,7 +215,7 @@ $J^{\top}$ C J $\Delta\mathbf{q}$ = $J^{\top}$ C $\mathbf{r}$,
 whose least-squares solution is:
 
 $$
-\Delta\mathbf{q} = J^{\sharp}\,\mathbf{r},\quad J^{\sharp} = (J^{\top} C J + W)^{-1} J^{\top} C.
+\Delta\mathbf{q} = J^{\sharp}\mathbf{r},\quad J^{\sharp} = (J^{\top} C J + W)^{-1} J^{\top} C.
 $$
 
 Iterate until convergence:
