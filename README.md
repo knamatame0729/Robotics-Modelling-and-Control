@@ -166,7 +166,14 @@ Measurements or commands in joint space are never perfect. If the joint vector q
 [error_propagation_ellipse.py](https://github.com/knamatame0729/Robotics-Modelling-and-Control/blob/main/error_propagation_ellipse.py)  
 
 - Result  (Joint angle uncertainty 0.05 [rad])  
-![Image](https://github.com/user-attachments/assets/3c981419-f66c-48eb-8a93-6f5ed2b2e6de)
+
+<div align="center">
+
+![Image](media/error_propagation_ellipse.png)
+
+</div>
+
+
 
 ## Inverse Kinematics
 
@@ -188,5 +195,29 @@ Measurements or commands in joint space are never perfect. If the joint vector q
 <div align="center">
 
 ![alt text](media/gn_vs_gd.png)
+
+</div>
+
+
+## Sensitivity of EOM to Payload Mass & Force Direction
+
+[planar_3R_static_torque.py](https://github.com/knamatame0729/Robotics-Modelling-and-Control/blob/main/planar_3R_static_torque.py)
+
+**System**
+Planar 3-link R-R-R arm (each link 1m) + point-mass payload at the tip
+
+**Interact**
+- Payload mass slider *m* (kg)
+- Force magnitude slider *F* (N)
+- Force direction slider *θ*
+
+**Output**
+- Numeric *M(q)* and *G(q)* for a sample pose
+- External wrench mapped to joint torqes $\tau_{\text{ext}} = J^\top F$  
+- Torques $\tau_1,\tau_2,\tau_3$
+
+<div align="center">
+
+![alt text](media/required_joint_torques.png)
 
 </div>
