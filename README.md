@@ -221,3 +221,34 @@ Planar 3-link R-R-R arm (each link 1m) + point-mass payload at the tip
 ![alt text](media/required_joint_torques.png)
 
 </div>
+
+## RNEA (Recursive Newton-Euler Algorithm)
+
+#### Overview
+RNEA is a **inverse dynamics** algorithm.  
+It computes the requred joint torques/forces given the joint positions, velocities, and accelerations.
+
+#### Key Features
+- Based on Newton-Euler equations of motion
+- Uses a **recursive** formulation for computational efficiency
+- Fast - Suitable for real-time control and simulation
+
+#### Computational Steps
+1. **Forward Recursion**
+Propagate link velocities and accelerations from base to end-effector
+2. **Backward Recursion**
+Compute forces and joint torques from end-effector back to base
+
+$$\tau_N = \text{RENA}(q, \dot q, \ddot q)$$
+
+#### Computational Scalability
+RNEA ≈ $\mathcal O(n)$
+## Lagrangian
+
+#### Symbolic Lagrange
+Derive $M(q)$, $C(q, \dot q)$, and $G(q)$ and Compute  
+
+$$\tau_L = M(q)\,\ddot q + C(q,\dot q)\, \dot q + G(q)$$
+
+##### Computational Scalability 
+Lagrange ≈ $\mathcal O(n^3)$
