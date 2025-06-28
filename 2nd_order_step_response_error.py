@@ -12,4 +12,13 @@ plt.ylabel('Output')
 plt.grid(True)
 plt.show()
 
+# Second-order example: m=1, b=0.8, k=4
+m, b, k = 1.0, 0.8, 4.0
+omega_n = np.sqrt(k/m)
+zeta = b / (2 * np.sqrt(m * k))
+G2 = TransferFunction([omega_n**2], [1, 2*zeta*omega_n, omega_n**2])
+t, y = step(G2)
+plt.plot(t, y)
+
+plt.show()
 
