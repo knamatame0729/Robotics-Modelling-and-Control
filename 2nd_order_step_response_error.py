@@ -19,6 +19,9 @@ zeta = b / (2 * np.sqrt(m * k))
 G2 = TransferFunction([omega_n**2], [1, 2*zeta*omega_n, omega_n**2])
 t, y = step(G2)
 plt.plot(t, y)
-
+plt.title(f'Step Response: 2nd-order (zeta={zeta:2f})')
+plt.xlabel('Time(s)')
+plt.ylabel('Output')
+plt.grid(True)
 plt.show()
 
