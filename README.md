@@ -1,5 +1,7 @@
 # Robotics-Modelling-and-Control 
 
+## Position of Rigid Body
+[position_vector_3d.py](https://github.com/knamatame0729/Robotics-Modelling-and-Control/blob/main/position_vector_3d.py)
 - **Reference Frame: F = O-xyz**  
 Origin: O
 Unit vectors: x, y, z(along each coordinate axis)  
@@ -13,12 +15,16 @@ The vector o' can be expressed as
 A bound vector is a vector that not only has magnitude and direction, but also a fixed point of application and acts a specific line in space.
 
 ## Orientation of a Rigid Body
+[rigid_body_orientation.py](https://github.com/knamatame0729/Robotics-Modelling-and-Control/blob/main/rigid_body_orientation.py)  
+
 The orientation of a rigid body is described by attaching a new orthonormal frame  O′-x′y′z′  to the body and expressing its axes with respect to the reference frame  O-xyz .
 
 Each unit vector  x′,y′,z′  of the body frame is expressed in terms of the reference frame as:  
 ![alt text](media/image-1.png)
 
 ## Rotation Matrix
+[rotation_matrix.py](https://github.com/knamatame0729/Robotics-Modelling-and-Control/blob/main/rotation_matrix.py)  
+
 A rotation matrix provides a way to describe the orientation of a rigid body in three-dimensional space.
 It is formed by arranging the unit vectors of the rotated coordinate frame into a 3×3 matrix R  
 ![alt text](media/rotation_matrix.png)
@@ -45,6 +51,8 @@ Let **p** be a vector expressed in the reference frame. When we apply a rotation
 
 
 ### Composition of Rotation Matrices
+[compose_rotation_matrices.py](https://github.com/knamatame0729/Robotics-Modelling-and-Control/blob/main/compose_rotation_matrices.py)
+
 Let O-x₀y₀z₀, O-x₁y₁z₁, O-x₂y₂z₂ be three frames with common origin O.  
 
 Let **p₂** be the coordinates of a vector **p** in Frame 2. Then, the transformations between frames are given by:
