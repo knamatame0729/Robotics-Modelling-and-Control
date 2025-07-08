@@ -196,6 +196,10 @@ Measurements or commands in joint space are never perfect. If the joint vector q
 
 
 ## Inverse Kinematics
+The goal of the inverse kinematics problem is to compute a joint vector $\mathbf{q}^\star$ that results in the end-effector reaching the desired pose $\mathbf{x}^\star \in SE(3)$
+
+- Provide exact answers with constant computation time
+- Highlights solution multiplicity 
 
 ## Optimisation-Based IK - Gradient Descent & Gauss-Newton
 
