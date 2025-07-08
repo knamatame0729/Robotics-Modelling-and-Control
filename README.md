@@ -114,11 +114,19 @@ A rigid body is completely described in space by its position and orientation wi
 </div>
 
 ## Single‑Pass FK Algorithm implementation
+[single_pass_fk.py](https://github.com/knamatame0729/Robotics-Modelling-and-Control/blob/main/single_pass_fk.py)
+
 The sigle-pass FK algorithm computes every link's world tranform in one linear sweep - no recursion, no call-stack growth.  
 
 - Efficiency - Linear time, cache-friendly loop.
 - Generality - Handles chains, trees, even floating bases (set parent = -1 and provide its pose).
 - Simplicity - Mirrors physical assembly: base → tip.
+
+<div align="center">
+
+![alt text](media/Single_pass_fk.png)  
+
+</div>
 
 ## Differential Kinematics
 The forward kinematics map  
