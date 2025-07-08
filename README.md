@@ -149,6 +149,10 @@ where *J(q)* is the Jacobian matrix.
 
 ## Jacobian properties: rank, manipulability, ellipse
 
+[planar_2R_jacobian_demo.py](https://github.com/knamatame0729/Robotics-Modelling-and-Control/blob/main/planar_2R_jacobian_demo.py)
+
+[jacobian_manipulability.py](https://github.com/knamatame0729/Robotics-Modelling-and-Control/blob/main/jacobian_manipulability.py)
+
 ### Rank & Singularity
 - **Full rank** (rank *J = m*) → mapping is locally bijective, every small task-space motion has a joint-space pre-image.
 - **Rank-deficient** → **singularity**: at least one task direction is lost, requiring infinite joint rates or forces.
